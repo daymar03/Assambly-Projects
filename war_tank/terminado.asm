@@ -1,11 +1,11 @@
 format binary as 'img'
 org 7c00h
 
-;C骴igo para leer desde HDD:
+;C贸digo para leer desde HDD:
 	mov	ah,0x02      ;usar el BIOS para cargar
 	mov	al,0x05      ;cantidad de sectores
 	mov	ch,0x00
-	mov	cl,0x02      ;a partir del segundo sector l骻ico
+	mov	cl,0x02      ;a partir del segundo sector l贸gico
 	mov	dh,0x00
 	mov	dl,0x00      ;del primer disco duro
 	mov	bx,0x800     ;y escribir el contenido en 0x800:0
@@ -17,7 +17,7 @@ org 7c00h
 	mov	ax,0x13
 	int	10h
 
-	jmp	8000h	     ;poner en ejecuci髇 el c骴igo cargado en HDD
+	jmp	8000h	     ;poner en ejecuci贸n el c贸digo cargado en HDD
 
 times 510-($-$$) db 0
 dw 0xaa55
